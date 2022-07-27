@@ -1,18 +1,15 @@
 package com.bloder.kmm_poc.android
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.bloder.kmm_poc.data.TopItem
 import com.bloder.kmm_poc.data.TopItemsRequest
 import com.bloder.kmm_poc.di.DI
 import com.bloder.kmm_poc.domain.FetchTopItemsUseCase
-import com.bloder.kmm_poc.domain.fetch
 import com.bloder.kmm_poc.domain.invoke
 import com.bloder.kmm_poc.network.error.NetworkError
 import com.bloder.kmm_poc.network.error.UnknownNetworkError
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.launch
 
 class MainViewModel(private val fetchTopItemsUseCase: FetchTopItemsUseCase = DI.fetchTopItemsUseCase()) : ViewModel() {
 

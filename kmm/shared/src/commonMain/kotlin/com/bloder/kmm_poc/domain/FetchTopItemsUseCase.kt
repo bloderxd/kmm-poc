@@ -8,6 +8,4 @@ import com.bloder.kmm_poc.network.error.NetworkError
 
 class FetchTopItemsUseCase(private val repository: TopItemsRepository) : TopItemsRepository by repository
 
-suspend operator fun FetchTopItemsUseCase.invoke(topItemsRequest: TopItemsRequest): Effect<NetworkError, TopItemsResponse> {
-    return fetch(topItemsRequest)
-}
+suspend operator fun FetchTopItemsUseCase.invoke(topItemsRequest: TopItemsRequest): Effect<NetworkError, TopItemsResponse> = topItemsRequest.fetch()

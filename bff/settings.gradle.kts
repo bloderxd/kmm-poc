@@ -1,0 +1,1 @@
+rootProject.name = "kmm_poc.bloder.com.bff"

@@ -1,17 +1,16 @@
-package com.bloder.kmm_poc.android
+package com.bloder.kmm_poc.presentation.animelist
 
-import androidx.lifecycle.ViewModel
 import com.bloder.kmm_poc.data.TopItem
 import com.bloder.kmm_poc.data.TopItemsRequest
-import com.bloder.kmm_poc.di.DI
 import com.bloder.kmm_poc.domain.FetchTopItemsUseCase
 import com.bloder.kmm_poc.domain.invoke
 import com.bloder.kmm_poc.network.error.NetworkError
 import com.bloder.kmm_poc.network.error.UnknownNetworkError
+import com.bloder.kmm_poc.presentation.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
-class MainViewModel(private val fetchTopItemsUseCase: FetchTopItemsUseCase = DI.fetchTopItemsUseCase()) : ViewModel() {
+class TopItemsViewModel(private val fetchTopItemsUseCase: FetchTopItemsUseCase) : ViewModel() {
 
     private val _airingAnimes: MutableStateFlow<List<TopItem>> = MutableStateFlow(listOf())
     private val _upcomingAnimes: MutableStateFlow<List<TopItem>> = MutableStateFlow(listOf())

@@ -30,4 +30,5 @@ dependencies {
     implementation("io.arrow-kt:arrow-optics:1.1.2")
     implementation("io.arrow-kt:arrow-fx-coroutines:1.1.2")
     implementation("androidx.activity:activity-ktx:1.5.0")
+    implementation("io.insert-koin:koin-android:3.1.6")
 }

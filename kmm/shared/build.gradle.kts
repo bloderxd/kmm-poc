@@ -29,6 +29,7 @@ kotlin {
                 implementation("io.arrow-kt:arrow-core:1.1.2")
                 implementation("io.arrow-kt:arrow-optics:1.1.2")
                 implementation("io.arrow-kt:arrow-fx-coroutines:1.1.2")
+                implementation("io.insert-koin:koin-core:3.1.6")
             }
         }
         val commonTest by getting {
@@ -38,6 +39,7 @@ kotlin {
         }
         val androidMain by getting {
             dependencies {
+                implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
                 implementation("io.ktor:ktor-client-okhttp:$ktorVersion")
             }
         }

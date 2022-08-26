@@ -1,16 +1,12 @@
 package com.bloder.kmm_poc.di
 
-import com.bloder.kmm_poc.data.TopItemsRepository
-import com.bloder.kmm_poc.data.TopItemsRepositoryDependency
-import com.bloder.kmm_poc.domain.FetchTopItemsUseCase
-import com.bloder.kmm_poc.network.animelist.AnimeListNetwork
-import kotlinx.coroutines.Dispatchers
+import org.koin.core.KoinApplication
+import org.koin.core.context.startKoin
+import org.koin.core.module.Module
 
-object DI {
-    fun animeListNetwork(): AnimeListNetwork = AnimeListNetwork
-    fun topItemRepository(): TopItemsRepository = TopItemsRepositoryDependency(
-        animeListNetwork = animeListNetwork(),
-        dispatcher = Dispatchers.Default
+fun initDI(appModule: Module) : KoinApplication = startKoin {
+    modules(
+        coreModule,
+        appModule
     )
-    fun fetchTopItemsUseCase(): FetchTopItemsUseCase = FetchTopItemsUseCase(topItemRepository())
 }
